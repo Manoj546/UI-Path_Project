@@ -13,12 +13,77 @@
   "Data": {
     "components": [
       {
-        "type": "button",
-        "label": "Submit",
-        "key": "submit",
-        "disableOnInvalid": true,
+        "tag": "h2",
+        "content": "Competative Coding Question Set Generator",
+        "key": "label",
+        "input": false,
+        "tableView": false,
+        "label": "Label",
+        "type": "label"
+      },
+      {
+        "label": "Select the platform the get questions",
+        "optionsLabelPosition": "right",
+        "inline": false,
+        "tableView": false,
+        "values": [
+          {
+            "label": "Leetcode",
+            "value": "Leetcode",
+            "shortcut": ""
+          },
+          {
+            "label": "Hackerrank",
+            "value": "Hackerrank",
+            "shortcut": ""
+          },
+          {
+            "label": "Codeforces",
+            "value": "Codeforces",
+            "shortcut": ""
+          }
+        ],
+        "validate": {
+          "required": true
+        },
+        "key": "selectThePlatformTheGetQuestions",
+        "type": "radio",
+        "input": true
+      },
+      {
+        "label": "Enter no of candidates",
+        "placeholder": "1",
+        "tableView": true,
+        "truncateMultipleSpaces": true,
+        "validate": {
+          "required": true
+        },
+        "key": "enterNoOfCandidates",
+        "type": "textfield",
         "input": true,
-        "tableView": false
+        "defaultValue": "1"
+      },
+      {
+        "label": "Enter no of questions",
+        "placeholder": "1",
+        "tableView": true,
+        "validate": {
+          "required": true
+        },
+        "key": "enterNoOfQuestions",
+        "type": "textfield",
+        "input": true,
+        "defaultValue": "1"
+      },
+      {
+        "label": "Submit",
+        "showValidations": false,
+        "disableOnInvalid": true,
+        "tableView": false,
+        "key": "submit",
+        "type": "button",
+        "input": true,
+        "saveOnEnter": true
       }
     ]
   }

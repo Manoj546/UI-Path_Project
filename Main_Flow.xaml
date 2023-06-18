@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main_Flow" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1410.4,701.6" sap2010:WorkflowViewState.IdRef="Main_Flow_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:uasc="clr-namespace:UiPath.Activities.System.Collections;assembly=UiPath.System.Activities" xmlns:ufa="clr-namespace:UiPath.Forms.Activities;assembly=UiPath.Forms.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main_Flow" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="874.4,701.6" sap2010:WorkflowViewState.IdRef="Main_Flow_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:uasc="clr-namespace:UiPath.Activities.System.Collections;assembly=UiPath.System.Activities" xmlns:ufa="clr-namespace:UiPath.Forms.Activities;assembly=UiPath.Forms.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -123,14 +123,14 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <av:Point x:Key="ShapeLocation">230,2.3999999999999986</av:Point>
         <av:Size x:Key="ShapeSize">60,75.2</av:Size>
-        <av:PointCollection x:Key="ConnectorLocation">260,77.6 260,259.92 200,259.92</av:PointCollection>
+        <av:PointCollection x:Key="ConnectorLocation">260,77.6 260,180 320,180</av:PointCollection>
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
       <x:Reference>__ReferenceID2</x:Reference>
     </Flowchart.StartNode>
-    <FlowStep>
+    <FlowStep x:Name="__ReferenceID2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">320,138.4</av:Point>
@@ -144,21 +144,40 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="387.2,295.2" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Choose Platform to get questions" OptionsString="Leetcode;Hacker Rank;Codeforces;" Title="Website">
-          <ui:InputDialog.Result>
-            <OutArgument x:TypeArguments="x:String">[choice]</OutArgument>
-          </ui:InputDialog.Result>
-        </ui:InputDialog>
-        <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="387.2,241.6" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Enter no of questions for each candidate" Title="Questions">
-          <ui:InputDialog.Result>
-            <OutArgument x:TypeArguments="x:Int32">[num_qquest]</OutArgument>
-          </ui:InputDialog.Result>
-        </ui:InputDialog>
-        <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="387.2,241.6" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False" Label="Enter no of candidates" Title="No  of Candidate/Question set">
-          <ui:InputDialog.Result>
-            <OutArgument x:TypeArguments="x:Int32">[num_cand]</OutArgument>
-          </ui:InputDialog.Result>
-        </ui:InputDialog>
+        <ufa:ShowFormActivity DisplayName="Show Form" FormId="e83bd81e-8c91-4eff-86e0-027d8b3691ae" Height="{x:Null}" sap:VirtualizedContainerService.HintSize="387.2,187.2" sap2010:WorkflowViewState.IdRef="ShowFormActivity_2" InstanceName="{x:Null}" IsAsync="False" Left="{x:Null}" Result="{x:Null}" Title="User Input" Top="{x:Null}" Width="{x:Null}" WindowState="[UiPath.Studio.Forms.Runtime.WindowState.Normal]">
+          <ufa:ShowFormActivity.Arguments>
+            <InOutArgument x:TypeArguments="x:String" x:Key="selectThePlatformTheGetQuestions">[choice]</InOutArgument>
+            <InOutArgument x:TypeArguments="x:Int32" x:Key="enterNoOfCandidates">[num_cand]</InOutArgument>
+            <InOutArgument x:TypeArguments="x:String" x:Key="enterNoOfQuestions">[num_qquest]</InOutArgument>
+          </ufa:ShowFormActivity.Arguments>
+          <ufa:ShowFormActivity.ShowInTaskbar>
+            <InArgument x:TypeArguments="s:Nullable(x:Boolean)">
+              <Literal x:TypeArguments="s:Nullable(x:Boolean)" Value="True">
+                <Literal.Result>
+                  <OutArgument x:TypeArguments="s:Nullable(x:Boolean)" />
+                </Literal.Result>
+              </Literal>
+            </InArgument>
+          </ufa:ShowFormActivity.ShowInTaskbar>
+          <ufa:ShowFormActivity.ShowMargin>
+            <InArgument x:TypeArguments="s:Nullable(x:Boolean)">
+              <Literal x:TypeArguments="s:Nullable(x:Boolean)" Value="True">
+                <Literal.Result>
+                  <OutArgument x:TypeArguments="s:Nullable(x:Boolean)" />
+                </Literal.Result>
+              </Literal>
+            </InArgument>
+          </ufa:ShowFormActivity.ShowMargin>
+          <ufa:ShowFormActivity.TopMost>
+            <InArgument x:TypeArguments="s:Nullable(x:Boolean)">
+              <Literal x:TypeArguments="s:Nullable(x:Boolean)" Value="True">
+                <Literal.Result>
+                  <OutArgument x:TypeArguments="s:Nullable(x:Boolean)" />
+                </Literal.Result>
+              </Literal>
+            </InArgument>
+          </ufa:ShowFormActivity.TopMost>
+        </ufa:ShowFormActivity>
       </Sequence>
       <FlowStep.Next>
         <FlowStep x:Name="__ReferenceID0">
@@ -168,7 +187,7 @@
               <av:Size x:Key="ShapeSize">200,83.2</av:Size>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Main Logic" sap:VirtualizedContainerService.HintSize="200,83.2" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <Sequence DisplayName="Main Logic" sap:VirtualizedContainerService.HintSize="691.2,3635.2" sap2010:WorkflowViewState.IdRef="Sequence_8">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="array" />
               <Variable x:TypeArguments="x:Int32" Name="rands" />
@@ -370,35 +389,15 @@
         </FlowStep>
       </FlowStep.Next>
     </FlowStep>
-    <FlowStep>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">10,408.4</av:Point>
-          <av:Size x:Key="ShapeSize">200,83.2</av:Size>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Launch App" sap:VirtualizedContainerService.HintSize="200,83.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-        <ufa:ShowFormActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" ShowInTaskbar="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" Width="{x:Null}" WindowState="{x:Null}" DisplayName="Show Form" FormId="e83bd81e-8c91-4eff-86e0-027d8b3691ae" sap:VirtualizedContainerService.HintSize="387.2,187.2" sap2010:WorkflowViewState.IdRef="ShowFormActivity_1" IsAsync="True">
-          <ufa:ShowFormActivity.Arguments>
-            <scg:Dictionary x:TypeArguments="x:String, Argument" />
-          </ufa:ShowFormActivity.Arguments>
-        </ufa:ShowFormActivity>
-      </Sequence>
-    </FlowStep>
     <x:Reference>__ReferenceID0</x:Reference>
-    <FlowStep x:Name="__ReferenceID2">
+    <FlowStep>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">0,233.52</av:Point>
           <av:Size x:Key="ShapeSize">200,52.8</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Flowchart DisplayName="Data Collection" sap:VirtualizedContainerService.HintSize="633.6,636.8" sap2010:WorkflowViewState.IdRef="Flowchart_2">
+      <Flowchart DisplayName="Data Collection" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Flowchart_2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -639,7 +638,7 @@
               <av:Size x:Key="ShapeSize">200,83.2</av:Size>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Codechef" sap:VirtualizedContainerService.HintSize="545.6,757.6" sap2010:WorkflowViewState.IdRef="Sequence_40">
+          <Sequence DisplayName="Codechef" sap:VirtualizedContainerService.HintSize="200,83.2" sap2010:WorkflowViewState.IdRef="Sequence_40">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
             </Sequence.Variables>
