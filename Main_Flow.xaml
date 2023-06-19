@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main_Flow" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="874.4,701.6" sap2010:WorkflowViewState.IdRef="Main_Flow_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:uasc="clr-namespace:UiPath.Activities.System.Collections;assembly=UiPath.System.Activities" xmlns:ufa="clr-namespace:UiPath.Forms.Activities;assembly=UiPath.Forms.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main_Flow" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1410.4,701.6" sap2010:WorkflowViewState.IdRef="Main_Flow_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:uasc="clr-namespace:UiPath.Activities.System.Collections;assembly=UiPath.System.Activities" xmlns:ufa="clr-namespace:UiPath.Forms.Activities;assembly=UiPath.Forms.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -46,6 +46,12 @@
       <x:String>UiPath.Forms.Activities</x:String>
       <x:String>UiPath.Forms.Activities.Base</x:String>
       <x:String>UiPath.Platform.GlobalVariables</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>UiPath.Activities.Contracts</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -110,6 +116,18 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Forms.Runtime</AssemblyReference>
       <AssemblyReference>UiPath.Forms.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Net.HttpListener</AssemblyReference>
+      <AssemblyReference>System.Net.WebProxy</AssemblyReference>
+      <AssemblyReference>System.Net.NameResolution</AssemblyReference>
+      <AssemblyReference>System.Net.WebClient</AssemblyReference>
+      <AssemblyReference>System.Net.Requests</AssemblyReference>
+      <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
+      <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
+      <AssemblyReference>UiPath.Activities.Contracts</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="Main_Flow" sap:VirtualizedContainerService.HintSize="633.6,636.8" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -117,6 +135,7 @@
       <Variable x:TypeArguments="x:String" Name="choice" />
       <Variable x:TypeArguments="x:Int32" Name="num_qquest" />
       <Variable x:TypeArguments="x:Int32" Name="num_cand" />
+      <Variable x:TypeArguments="x:String" Name="array" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -128,9 +147,9 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID2</x:Reference>
+      <x:Reference>__ReferenceID3</x:Reference>
     </Flowchart.StartNode>
-    <FlowStep x:Name="__ReferenceID2">
+    <FlowStep x:Name="__ReferenceID3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">320,138.4</av:Point>
@@ -144,7 +163,7 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ufa:ShowFormActivity DisplayName="Show Form" FormId="e83bd81e-8c91-4eff-86e0-027d8b3691ae" Height="{x:Null}" sap:VirtualizedContainerService.HintSize="387.2,187.2" sap2010:WorkflowViewState.IdRef="ShowFormActivity_2" InstanceName="{x:Null}" IsAsync="False" Left="{x:Null}" Result="{x:Null}" Title="User Input" Top="{x:Null}" Width="{x:Null}" WindowState="[UiPath.Studio.Forms.Runtime.WindowState.Normal]">
+        <ufa:ShowFormActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" Top="{x:Null}" Width="{x:Null}" DisplayName="Show Form" FormId="e83bd81e-8c91-4eff-86e0-027d8b3691ae" sap:VirtualizedContainerService.HintSize="387.2,187.2" sap2010:WorkflowViewState.IdRef="ShowFormActivity_2" IsAsync="False" Title="User Input" WindowState="[UiPath.Studio.Forms.Runtime.WindowState.Normal]">
           <ufa:ShowFormActivity.Arguments>
             <InOutArgument x:TypeArguments="x:String" x:Key="selectThePlatformTheGetQuestions">[choice]</InOutArgument>
             <InOutArgument x:TypeArguments="x:Int32" x:Key="enterNoOfCandidates">[num_cand]</InOutArgument>
@@ -185,11 +204,11 @@
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">330,328.54</av:Point>
               <av:Size x:Key="ShapeSize">200,83.2</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">430,411.74 430,480.14000000000004 230,480.14000000000004</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Main Logic" sap:VirtualizedContainerService.HintSize="691.2,3635.2" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <Sequence DisplayName="Main Logic" sap:VirtualizedContainerService.HintSize="691.2,3475.2" sap2010:WorkflowViewState.IdRef="Sequence_8">
             <Sequence.Variables>
-              <Variable x:TypeArguments="x:String" Name="array" />
               <Variable x:TypeArguments="x:Int32" Name="rands" />
               <Variable x:TypeArguments="sd:DataTable" Name="dataTable" />
               <Variable x:TypeArguments="scg:List(x:String)" Name="output" />
@@ -201,7 +220,15 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dataTable]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="628.8,88" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="[choice]" WorkbookPath="E:\AD_drive\6th sem\rpa\UI-Path_Project\process.xlsx" />
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="628.8,1080.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
+            <Assign sap:VirtualizedContainerService.HintSize="628.8,81.6" sap2010:WorkflowViewState.IdRef="Assign_33">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[array]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String" xml:space="preserve">[choice+" Questions list"+ vbCrLf + vbCrLf  + vbCrLf +"Question Set"+  vbCrLf+  vbCrLf]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="628.8,959.2" sap2010:WorkflowViewState.IdRef="Sequence_12">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:Int32" Default="0" Name="var" />
               </Sequence.Variables>
@@ -216,16 +243,6 @@
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="x:Int32">[num_qquest]</InArgument>
-                </Assign.Value>
-              </Assign>
-              <Assign sap:VirtualizedContainerService.HintSize="531.2,81.6" sap2010:WorkflowViewState.IdRef="Assign_13">
-                <Assign.To>
-                  <OutArgument x:TypeArguments="x:String">[array]</OutArgument>
-                </Assign.To>
-                <Assign.Value>
-                  <InArgument x:TypeArguments="x:String">
-                    <Literal x:TypeArguments="x:String" Value="" />
-                  </InArgument>
                 </Assign.Value>
               </Assign>
               <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[var&gt;0]" DisplayName="While" sap:VirtualizedContainerService.HintSize="531.2,604" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_5">
@@ -252,7 +269,7 @@
                         <OutArgument x:TypeArguments="x:String">[array]</OutArgument>
                       </Assign.To>
                       <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">[array+" : "+dataTable.Rows(rands).Item(0).ToString]</InArgument>
+                        <InArgument x:TypeArguments="x:String">[array +dataTable.Rows(rands).Item(0).ToString+vbTab+dataTable.Rows(rands).Item(2).ToString+vbTab+dataTable.Rows(rands).Item(1).ToString+vbTab +vbCrLf]</InArgument>
                       </Assign.Value>
                     </Assign>
                     <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_16">
@@ -283,9 +300,17 @@
               </uasc:BuildCollection.NextItems>
             </uasc:BuildCollection>
             <uasc:RemoveFromCollection x:TypeArguments="x:String" Item="{x:Null}" Collection="[output]" DisplayName="Remove from collection" sap:VirtualizedContainerService.HintSize="628.8,219.2" sap2010:WorkflowViewState.IdRef="RemoveFromCollection`1_1" Index="0" RemoveAllElements="False" />
-            <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[num_cand&gt;0]" DisplayName="While" sap:VirtualizedContainerService.HintSize="628.8,1429.6" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_7">
+            <Assign sap:VirtualizedContainerService.HintSize="628.8,81.6" sap2010:WorkflowViewState.IdRef="Assign_38">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[array]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[array + vbCrLf]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[num_cand&gt;0]" DisplayName="While" sap:VirtualizedContainerService.HintSize="628.8,1551.2" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_7">
               <ui:InterruptibleWhile.Body>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="593.6,1262.4" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="593.6,1384" sap2010:WorkflowViewState.IdRef="Sequence_14">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Int32" Default="0" Name="var" />
                   </Sequence.Variables>
@@ -294,22 +319,20 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="531.2,81.6" sap2010:WorkflowViewState.IdRef="Assign_35">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[array]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[vbCrLf+vbCrLf+array+"Questions Set"+ vbCrLf]</InArgument>
+                    </Assign.Value>
+                  </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="531.2,81.6" sap2010:WorkflowViewState.IdRef="Assign_19">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Int32">[var]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
                       <InArgument x:TypeArguments="x:Int32">[num_qquest]</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                  <Assign sap:VirtualizedContainerService.HintSize="531.2,81.6" sap2010:WorkflowViewState.IdRef="Assign_20">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[array]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">
-                        <Literal x:TypeArguments="x:String" Value="" />
-                      </InArgument>
                     </Assign.Value>
                   </Assign>
                   <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[var&gt;0]" DisplayName="While" sap:VirtualizedContainerService.HintSize="531.2,604" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_6">
@@ -336,7 +359,7 @@
                             <OutArgument x:TypeArguments="x:String">[array]</OutArgument>
                           </Assign.To>
                           <Assign.Value>
-                            <InArgument x:TypeArguments="x:String">[array+" : "+dataTable.Rows(rands).Item(0).ToString]</InArgument>
+                            <InArgument x:TypeArguments="x:String">[array + vbCrLf +dataTable.Rows(rands).Item(0).ToString+vbTab+dataTable.Rows(rands).Item(2).ToString+vbTab+dataTable.Rows(rands).Item(1).ToString+vbTab]</InArgument>
                           </Assign.Value>
                         </Assign>
                         <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_23">
@@ -365,27 +388,44 @@
                       <InArgument x:TypeArguments="x:Int32">[num_cand-1]</InArgument>
                     </Assign.Value>
                   </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="531.2,81.6" sap2010:WorkflowViewState.IdRef="Assign_37">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[array]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[array+vbCrLf+vbCrLf]</InArgument>
+                    </Assign.Value>
+                  </Assign>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
             </ui:InterruptibleWhile>
-            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="628.8,363.2" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[output]">
-              <ui:ForEach.Body>
-                <ActivityAction x:TypeArguments="x:String">
-                  <ActivityAction.Argument>
-                    <DelegateInArgument x:TypeArguments="x:String" Name="currentItem" />
-                  </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376.8,175.2" sap2010:WorkflowViewState.IdRef="Sequence_18">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[currentItem]" />
-                  </Sequence>
-                </ActivityAction>
-              </ui:ForEach.Body>
-            </ui:ForEach>
           </Sequence>
+          <FlowStep.Next>
+            <FlowStep x:Name="__ReferenceID2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">30,438.54</av:Point>
+                  <av:Size x:Key="ShapeSize">200,83.2</av:Size>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Sequence sap:VirtualizedContainerService.HintSize="200,83.2" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:String" Name="password" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:GetPassword DisplayName="Get Password" sap:VirtualizedContainerService.HintSize="387.2,24.8" sap2010:WorkflowViewState.IdRef="GetPassword_1" ProtectedPassword="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAMiJlQ5+1x0iLRVF/WexBAAAAAAACAAAAAAAQZgAAAAEAACAAAAC9mepeYFV+AdBo44ksWIHL6hodhF1AHIn7Yopz91McCAAAAAAOgAAAAAIAACAAAAC0YOJPIbwiK0t6UxcyBCPPBmm88M2Aun/MIbV+IsLCgCAAAABqVdfaflOaqWW92NP8YYaHhTTy7OlVgBbz2AY3CN3ZvEAAAADcAYIq3PM+8rPIR037xS7Y1R7wuOcTvuyCJfEHLyccDw0iI/5ijQ8lfHW1rGVkWEHsYxVlHRQa8kS16cO2HIEB" Result="[password]" />
+                <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[array]" DisplayName="Send SMTP Mail Message" Email="moviescrash0@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="387.2,148.8" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Password="[password]" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="Questions list" To="moviescrash0@gmail.com">
+                  <ui:SendMail.Files>
+                    <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                  </ui:SendMail.Files>
+                </ui:SendMail>
+              </Sequence>
+            </FlowStep>
+          </FlowStep.Next>
         </FlowStep>
       </FlowStep.Next>
     </FlowStep>
@@ -679,5 +719,6 @@
         </FlowStep>
       </Flowchart>
     </FlowStep>
+    <x:Reference>__ReferenceID2</x:Reference>
   </Flowchart>
 </Activity>
