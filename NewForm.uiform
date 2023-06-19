@@ -76,6 +76,13 @@
         "defaultValue": "1"
       },
       {
+        "label": "Enter Email to send questions list",
+        "tableView": true,
+        "key": "emails",
+        "type": "email",
+        "input": true
+      },
+      {
         "label": "Submit",
         "showValidations": false,
         "disableOnInvalid": true,

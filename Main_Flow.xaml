@@ -57,6 +57,8 @@
   <TextExpression.ReferencesForImplementation>
     <sco:Collection x:TypeArguments="AssemblyReference">
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
       <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
@@ -81,53 +83,52 @@
       <AssemblyReference>System.Linq</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Net.HttpListener</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.Net.NameResolution</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Net.Requests</AssemblyReference>
+      <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
+      <AssemblyReference>System.Net.WebClient</AssemblyReference>
+      <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
+      <AssemblyReference>System.Net.WebProxy</AssemblyReference>
       <AssemblyReference>System.ObjectModel</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
       <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
       <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
       <AssemblyReference>System.Private.Uri</AssemblyReference>
       <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Private.Xml.Linq</AssemblyReference>
       <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
       <AssemblyReference>System.Security.Permissions</AssemblyReference>
       <AssemblyReference>System.Xaml</AssemblyReference>
       <AssemblyReference>System.Xml</AssemblyReference>
       <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Activities.Contracts</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Forms.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Forms.Runtime</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
-      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
-      <AssemblyReference>UiPath.Platform</AssemblyReference>
-      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
-      <AssemblyReference>System.Private.Xml.Linq</AssemblyReference>
-      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
-      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
-      <AssemblyReference>UiPath.Studio.Forms.Runtime</AssemblyReference>
-      <AssemblyReference>UiPath.Forms.Activities</AssemblyReference>
-      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
-      <AssemblyReference>UiPath.Mail</AssemblyReference>
-      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Net.Primitives</AssemblyReference>
-      <AssemblyReference>System.Net.HttpListener</AssemblyReference>
-      <AssemblyReference>System.Net.WebProxy</AssemblyReference>
-      <AssemblyReference>System.Net.NameResolution</AssemblyReference>
-      <AssemblyReference>System.Net.WebClient</AssemblyReference>
-      <AssemblyReference>System.Net.Requests</AssemblyReference>
-      <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
-      <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
-      <AssemblyReference>UiPath.Activities.Contracts</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="Main_Flow" sap:VirtualizedContainerService.HintSize="633.6,636.8" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -136,6 +137,7 @@
       <Variable x:TypeArguments="x:Int32" Name="num_qquest" />
       <Variable x:TypeArguments="x:Int32" Name="num_cand" />
       <Variable x:TypeArguments="x:String" Name="array" />
+      <Variable x:TypeArguments="x:String" Name="emails" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -157,7 +159,7 @@
           <av:PointCollection x:Key="ConnectorLocation">420,221.60000000000002 420,251.59999999999997 430,251.59999999999997 430,328.54</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="User_Input" sap:VirtualizedContainerService.HintSize="200,83.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <Sequence DisplayName="User_Input" sap:VirtualizedContainerService.HintSize="449.6,299.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -168,6 +170,7 @@
             <InOutArgument x:TypeArguments="x:String" x:Key="selectThePlatformTheGetQuestions">[choice]</InOutArgument>
             <InOutArgument x:TypeArguments="x:Int32" x:Key="enterNoOfCandidates">[num_cand]</InOutArgument>
             <InOutArgument x:TypeArguments="x:String" x:Key="enterNoOfQuestions">[num_qquest]</InOutArgument>
+            <InOutArgument x:TypeArguments="x:String" x:Key="emails">[emails]</InOutArgument>
           </ufa:ShowFormActivity.Arguments>
           <ufa:ShowFormActivity.ShowInTaskbar>
             <InArgument x:TypeArguments="s:Nullable(x:Boolean)">
@@ -207,7 +210,7 @@
               <av:PointCollection x:Key="ConnectorLocation">430,411.74 430,480.14000000000004 230,480.14000000000004</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Main Logic" sap:VirtualizedContainerService.HintSize="691.2,3475.2" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <Sequence DisplayName="Main Logic" sap:VirtualizedContainerService.HintSize="200,83.2" sap2010:WorkflowViewState.IdRef="Sequence_8">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Int32" Name="rands" />
               <Variable x:TypeArguments="sd:DataTable" Name="dataTable" />
@@ -408,7 +411,7 @@
                   <av:Size x:Key="ShapeSize">200,83.2</av:Size>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence sap:VirtualizedContainerService.HintSize="200,83.2" sap2010:WorkflowViewState.IdRef="Sequence_42">
+              <Sequence DisplayName="Email" sap:VirtualizedContainerService.HintSize="200,83.2" sap2010:WorkflowViewState.IdRef="Sequence_42">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="password" />
                 </Sequence.Variables>
@@ -418,7 +421,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:GetPassword DisplayName="Get Password" sap:VirtualizedContainerService.HintSize="387.2,24.8" sap2010:WorkflowViewState.IdRef="GetPassword_1" ProtectedPassword="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAMiJlQ5+1x0iLRVF/WexBAAAAAAACAAAAAAAQZgAAAAEAACAAAAC9mepeYFV+AdBo44ksWIHL6hodhF1AHIn7Yopz91McCAAAAAAOgAAAAAIAACAAAAC0YOJPIbwiK0t6UxcyBCPPBmm88M2Aun/MIbV+IsLCgCAAAABqVdfaflOaqWW92NP8YYaHhTTy7OlVgBbz2AY3CN3ZvEAAAADcAYIq3PM+8rPIR037xS7Y1R7wuOcTvuyCJfEHLyccDw0iI/5ijQ8lfHW1rGVkWEHsYxVlHRQa8kS16cO2HIEB" Result="[password]" />
-                <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[array]" DisplayName="Send SMTP Mail Message" Email="moviescrash0@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="387.2,148.8" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Password="[password]" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="Questions list" To="moviescrash0@gmail.com">
+                <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[array]" DisplayName="Send SMTP Mail Message" Email="moviescrash0@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="387.2,148.8" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Password="[password]" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="Questions list" To="[emails]">
                   <ui:SendMail.Files>
                     <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                   </ui:SendMail.Files>
@@ -433,7 +436,7 @@
     <FlowStep>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">0,233.52</av:Point>
+          <av:Point x:Key="ShapeLocation">0,203.6</av:Point>
           <av:Size x:Key="ShapeSize">200,52.8</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
